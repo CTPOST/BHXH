@@ -1,0 +1,230 @@
+.section-heading label{
+    color:white;
+}
+
+.section-heading label span{
+    color:#f5a425;
+}
+
+.section-heading input{
+    width: 100%;
+}
+
+.container-quyenloi{
+    border: solid 1px #f5a425;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.container-quyenloi h5{
+    color: #f5a425;
+    text-align: center;
+}
+
+.container-quyenloi p{
+    color: white;
+    padding-left: 10px;
+}
+
+.container-quyenloi p span{
+    color: #f5a425;
+}
+
+.container-cacmucdong{
+    margin-top: 10px;
+    border: solid 1px #f5a425;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.container-cacmucdong h5{
+    color: #f5a425;
+    text-align: center;
+}
+
+.container-mucdong{
+    display: flex;
+}
+
+.mucdong{
+    border: solid 1px #f5a425;
+    border-radius: 10px;
+    width: 25%;
+    margin: 0.5%;
+    color: white;
+    padding: 1%;
+}
+
+.mucdong h5{
+  height: 10vh;
+}
+
+.mucdong div{
+    height: 40vh;
+}
+
+.container-mucdong div p{
+    font-size: 13px;
+}
+
+.MucDongGiam{
+    text-align: center;
+    width: 100%;
+}
+
+.MucDongGiam span{
+    text-decoration: line-through;
+}
+
+.MucDong{
+    text-align: center;
+    width: 100%;
+}
+
+.MucDong span{
+    color: #f5a425;
+}
+
+.MucDong button{
+    width: 100% !important;
+}
+
+.container-lienhe{
+    color: #f5a425;
+    padding: 10px;
+    border: solid 1px #f5a425;
+    border-radius: 10px;
+    height: 100%;
+}
+
+/* From Uiverse.io by JaydipPrajapati1910 */ 
+.toggle-button-cover {
+    display: table-cell;
+    position: relative;
+    height: 50px;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+  
+  .button-cover {
+    height: 100px;
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0 10px 20px -8px #c5d6d6;
+    border-radius: 4px;
+  }
+  
+  .button-cover:before {
+    counter-increment: button-counter;
+    content: counter(button-counter);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #d7e3e3;
+    font-size: 12px;
+    line-height: 1;
+    padding: 5px;
+  }
+  
+  .button-cover,
+  .knobs,
+  .layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .button {
+    position: relative;
+    top: 50%;
+    width: 74px;
+    height: 36px;
+    margin: -20px auto 0 auto;
+    overflow: hidden;
+  }
+  
+  .checkbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+  }
+  
+  .knobs {
+    z-index: 2;
+  }
+  
+  .layer {
+    width: 100%;
+    background-color: #ebf7fc;
+    transition: 0.3s ease all;
+    z-index: 1;
+  }
+  
+  .button.r,
+  .button.r .layer {
+    border-radius: 100px;
+  }
+  
+  #button-3 .knobs:before {
+    content: "NAM";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    padding: 9px 4px;
+    background-color: #03a9f4;
+    border-radius: 50%;
+    transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+  }
+  
+  #button-3 .checkbox:active + .knobs:before {
+    width: 46px;
+    border-radius: 100px;
+  }
+  
+  #button-3 .checkbox:checked:active + .knobs:before {
+    margin-left: -26px;
+  }
+  
+  #button-3 .checkbox:checked + .knobs:before {
+    content: "NỮ";
+    left: 42px;
+    background-color: #f5a425;
+  }
+  
+  #button-3 .checkbox:checked ~ .layer {
+    background-color: #fcebeb;
+  }
+
+  th{
+    border: 1px #f5a425 solid !important;
+    text-align: center;
+    align-content: center;
+  }
+
+  td{
+    border: 1px #f5a425 solid !important;
+    text-align: center;
+    align-content: center;
+  }
+
+  tbody tr:hover{
+    color:#f5a425 !important;
+  }
+
+  table{
+    color:white !important;
+  }
