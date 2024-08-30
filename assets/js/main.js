@@ -3,7 +3,7 @@ $(document).ready(function() {
         var GioiTinh = window.getComputedStyle(document.querySelector('.knobs'), '::before').getPropertyValue('content');
         GioiTinh = GioiTinh.replace(/['"]/g, '');
         var value = $(this).val();
-        $('#rangeValue').text(formatNumber(value)+'đ/tháng.');
+        $('#rangeValue').text(formatNumber(value));
 
         var MucDongGiam1Thang = value*0.22;
         var MucDong1Thang = MucDongGiam1Thang-33000;
@@ -26,11 +26,15 @@ $(document).ready(function() {
         $('#MucDong12Thang').text(formatNumber(MucDong12Thang));
         
         if(GioiTinh == "NAM"){
-            var LuongHuu = value*0.55;
-            $('#LuongHuu').text(formatNumber(LuongHuu.toFixed(0))+"đ/tháng.");
+            var LuongHuu = value*0.45*1.475;
+            var TongLuongHuu = LuongHuu*12*(1.07**20-1)/0.07;
+            $('#LuongHuu').text(formatNumber(LuongHuu.toFixed(0)));
+            $('#TongLuongHuu').text(formatNumber(TongLuongHuu.toFixed(0)));
         }else{
-            var LuongHuu = value*0.45;
-            $('#LuongHuu').text(formatNumber(LuongHuu.toFixed(0))+"đ/tháng.");
+            var LuongHuu = value*0.55*1.475;
+            var TongLuongHuu = LuongHuu*12*(1.07**20-1)/0.07;
+            $('#LuongHuu').text(formatNumber(LuongHuu.toFixed(0)));
+            $('#TongLuongHuu').text(formatNumber(TongLuongHuu.toFixed(0)));
         }
     });
 
@@ -39,11 +43,15 @@ $(document).ready(function() {
         GioiTinh = GioiTinh.replace(/['"]/g, '');
         var value = $("#customRange1").val();
         if(GioiTinh == "NAM"){
-            var LuongHuu = value*0.55;
-            $('#LuongHuu').text(formatNumber(LuongHuu.toFixed(0))+"đ/tháng.");
+            var LuongHuu = value*0.45*1.475;
+            var TongLuongHuu = LuongHuu*12*(1.07**20-1)/0.07;
+            $('#LuongHuu').text(formatNumber(LuongHuu.toFixed(0)));
+            $('#TongLuongHuu').text(formatNumber(TongLuongHuu.toFixed(0)));
         }else{
-            var LuongHuu = value*0.45;
-            $('#LuongHuu').text(formatNumber(LuongHuu.toFixed(0))+"đ/tháng.");
+            var LuongHuu = value*0.55*1.475;
+            var TongLuongHuu = LuongHuu*12*(1.07**20-1)/0.07;
+            $('#LuongHuu').text(formatNumber(LuongHuu.toFixed(0)));
+            $('#TongLuongHuu').text(formatNumber(TongLuongHuu.toFixed(0)));
         }
     });
     
@@ -58,3 +66,5 @@ $(document).ready(function() {
 function formatNumber(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
+
+

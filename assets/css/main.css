@@ -7,7 +7,7 @@
 }
 
 .section-heading input{
-    width: 100%;
+    width: 90%;
 }
 
 .container-quyenloi{
@@ -49,18 +49,49 @@
 .mucdong{
     border: solid 1px #f5a425;
     border-radius: 10px;
-    width: 25%;
+    width: 24%;
     margin: 0.5%;
     color: white;
     padding: 1%;
 }
 
 .mucdong h5{
-  height: 10vh;
+  height: 7vh;
+  font-size: 1rem;
 }
 
 .mucdong div{
-    height: 40vh;
+  height: 30vh;
+}
+
+@media (max-width: 992px) {
+  .mucdong div{
+    height: 30vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .mucdong div{
+    height: 65vh;
+  }
+  .MucDongGiam{
+    font-size: 0.8rem;
+  }
+  .MucDong{
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .mucdong div{
+    height: 100vh;
+  }
+  .MucDongGiam{
+    font-size: 0.8rem;
+  }
+  .MucDong{
+    font-size: 0.8rem;
+  }
 }
 
 .container-mucdong div p{
@@ -213,12 +244,18 @@
     border: 1px #f5a425 solid !important;
     text-align: center;
     align-content: center;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    font-size: 1.5vw;
   }
 
   td{
     border: 1px #f5a425 solid !important;
     text-align: center;
     align-content: center;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    font-size: 1.8vw;
   }
 
   tbody tr:hover{
@@ -227,4 +264,5 @@
 
   table{
     color:white !important;
+    text-align: center;
   }
