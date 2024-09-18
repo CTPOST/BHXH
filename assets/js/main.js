@@ -61,29 +61,9 @@ $(document).ready(function() {
         $(this).attr('data-checked', !isChecked);
         $(this).attr('aria-checked', !isChecked);
     });
-
-    updateVisitInfo();
-    setInterval(updateVisitInfo, 10000); 
 });
 
 function formatNumber(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
-
-function updateVisitInfo() {
-    $.ajax({
-        url: 'counter.php', // API để lấy số liệu truy cập
-        method: 'GET',
-        dataType: 'json',
-        success: function(response) {
-            $('#total-count').text(response.total_count);
-            $('#active-users').text(response.active_sessions);
-        },
-        error: function() {
-            $('#total-count').text('Không thể lấy số liệu');
-            $('#active-users').text('Không thể lấy số liệu');
-        }
-    });
-}
-
 
