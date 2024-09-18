@@ -502,5 +502,75 @@
           checkSection();
         });
     </script>
+      <script type="module">
+      import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js';
+      import { getDatabase, ref, set, get, onValue, update } from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js';
+
+      // Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyAYaT6QqA2YtoThD1oOYXmXJZNQcF3RmZk",
+        authDomain: "website-trackin.firebaseapp.com",
+        databaseURL: "https://website-trackin-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "website-trackin",
+        storageBucket: "website-trackin.appspot.com",
+        messagingSenderId: "758467544993",
+        appId: "1:758467544993:web:42e5b363e8ed412150ede0",
+      };
+
+      const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        // References
+        const totalRef = ref(database, 'totalVisits');
+        const activeUsersRef = ref(database, 'activeUsers');
+
+        // Update total visits
+        function incrementTotalVisits() {
+            get(totalRef).then((snapshot) => {
+                const currentTotal = snapshot.exists() ? snapshot.val().count : 0;
+                update(totalRef, { count: (currentTotal || 0) + 1 });
+            }).catch((error) => {
+                console.error("Error updating total visits:", error);
+            });
+        }
+
+        // Update active users
+        function incrementActiveUsers() {
+            get(activeUsersRef).then((snapshot) => {
+                const currentActive = snapshot.exists() ? snapshot.val().count : 0;
+                update(activeUsersRef, { count: (currentActive || 0) + 1 });
+            }).catch((error) => {
+                console.error("Error updating active users:", error);
+            });
+        }
+
+        // Update active users count when user leaves page
+        window.addEventListener('unload', () => {
+            get(activeUsersRef).then((snapshot) => {
+                const currentActive = snapshot.exists() ? snapshot.val().count : 0;
+                if (currentActive > 0) {
+                    update(activeUsersRef, { count: currentActive - 1 });
+                }
+            }).catch((error) => {
+                console.error("Error updating active users on unload:", error);
+            });
+        });
+        
+
+        // Display data
+        onValue(totalRef, (snapshot) => {
+            const value = snapshot.val();
+            document.getElementById('total-count').textContent = value !== null ? value.count || 0 : 0;
+        });
+
+        onValue(activeUsersRef, (snapshot) => {
+            const value = snapshot.val();
+            document.getElementById('active-users').textContent = value !== null ? value.count || 0 : 0;
+        });
+
+        // Increment visits and active users on page load
+        incrementTotalVisits();
+        incrementActiveUsers();
+  </script>
 </body>
 </html>
